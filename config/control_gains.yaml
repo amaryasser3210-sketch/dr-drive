@@ -1,0 +1,31 @@
+# control_gains.yaml — controller tuning (SSOT)
+# Owner: Control system design. PLACEHOLDER GAINS — tune in sim (W2/W3) then on hardware (W5).
+control:
+  # Lateral controller
+  lateral:
+    type: stanley                 # stanley | pure_pursuit
+    # Stanley
+    k_cross_track: 1.0
+    k_heading: 1.0
+    k_soft: 0.5                   # softening constant (avoids div-by-zero at v~0)
+    # Pure Pursuit (used if type == pure_pursuit)
+    lookahead_min: 0.3            # m
+    lookahead_gain: 0.5           # m per m/s
+
+  # Longitudinal (speed) PID
+  speed_pid:
+    kp: 1.0
+    ki: 0.1
+    kd: 0.0
+    v_target: 0.35                # m/s nominal
+
+  # Lane-change manoeuvre
+  lane_change:
+    trigger_distance: 1.2         # m before obstacle to start the manoeuvre
+    max_yaw_rate: 1.0             # rad/s
+    settle_tolerance: 0.05        # m, accepted lateral offset after the change
+
+  # Clamps (mirror robot_params limits)
+  limits:
+    max_linear: 0.60
+    max_angular: 2.0

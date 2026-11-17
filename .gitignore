@@ -1,0 +1,50 @@
+# ---- ROS2 / colcon ----
+build/
+install/
+log/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# ---- C/C++ / firmware ----
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# ---- MATLAB / Simulink ----
+slprj/
+sfprj/
+codegen/
+*.mex*
+*.asv
+*.autosave
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Large local data (keep small samples only) ----
+data/**/*.bag
+data/**/*.db3
+data/**/*.mcap
+*.bag
+*.db3
+*.mcap
+
+# ---- Secrets ----
+*.env
+.env

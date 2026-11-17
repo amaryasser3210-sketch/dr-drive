@@ -1,0 +1,18 @@
+# robot_params.yaml — physical robot (SSOT)
+# Owner: Robot modeling and simulation / Hardware integration. PLACEHOLDER VALUES — confirm on hardware.
+amr:
+  # Drivetrain
+  drive_type: differential        # differential | bicycle
+  wheelbase: 0.20                 # m, distance between left/right wheel contact points
+  wheel_radius: 0.033             # m
+  track_width: 0.24               # m, outer width (must be <= 0.30 per course rule)
+  mass: 1.2                       # kg
+
+  # Limits (also used to clamp /cmd_vel)
+  v_max: 0.60                     # m/s
+  omega_max: 2.0                  # rad/s
+  a_max: 1.0                      # m/s^2
+
+  # Encoders
+  encoder_ticks_per_rev: 1024     # ticks per wheel revolution (after gearing)
+  gear_ratio: 1.0

@@ -1,0 +1,27 @@
+# lane_geometry.yaml — track & environment (SSOT)
+# Canonical values from the course description. Do NOT change these.
+track:
+  lane_width: 0.40                # m (course rule)
+  track_length: 10.0              # m (course rule)
+  num_lanes: 2                    # Task 2
+  tape_color: black               # black electrical tape
+  start_lane: right               # Task 2 start lane
+
+obstacles:                        # fixed positions, Task 2
+  - id: 1
+    lane: right
+    distance_from_start: 4.0      # m
+  - id: 2
+    lane: left
+    distance_from_start: 8.0      # m
+
+vehicle:
+  max_width: 0.30                 # m (course rule)
+
+# Camera lane-detection thresholds (Perception and sensing owns; tuned on real lighting in W5)
+lane_detection:
+  roi_top_frac: 0.45              # crop top fraction
+  hsv_black_v_max: 80             # value channel ceiling for "black tape"
+  hsv_black_s_max: 90             # saturation ceiling for "black tape"
+  min_lane_pixels: 200
+  confidence_min: 0.5

@@ -1,0 +1,32 @@
+# sensor_params.yaml — sensors (SSOT)
+# Owner: Perception and sensing. PLACEHOLDER VALUES — confirm against datasheets/mounting.
+sensors:
+  camera:
+    resolution: [640, 480]
+    fps: 30
+    horizontal_fov_deg: 62.0
+    frame_id: camera_link
+    mount_height: 0.15            # m above ground
+    mount_pitch_deg: -15.0
+
+  imu:
+    rate_hz: 100
+    frame_id: imu_link
+    # noise/bias set during EKF tuning (State estimation)
+
+  # Choose one: lidar OR ultrasonic. Both may be installed; at least one is required.
+  lidar:
+    enabled: true
+    type: 2d
+    range_min: 0.05               # m
+    range_max: 4.0                # m
+    samples: 360
+    frame_id: lidar_link
+
+  ultrasonic:
+    enabled: false
+    count: 1
+    range_max: 4.0                # m
+
+  wheel_encoders:
+    frame_id: base_link
